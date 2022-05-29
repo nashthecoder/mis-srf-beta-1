@@ -1,1 +1,3 @@
-# mis-srf-beta-1
+
+# JSON SERVER
+json-server --watch data/db.json --port 8000  
