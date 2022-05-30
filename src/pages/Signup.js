@@ -12,6 +12,7 @@ import { RadioGroup, Radio } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
 import Divider from '@material-ui/core/Divider'
 import Layout from '../components/Layout'
+// import Box from '@mui/material/Box'
 
 // const defaultValues ={
 //   ReactDatepicker: new Date(),
@@ -30,6 +31,9 @@ btn: {
   '&:hover': {
     backgroundColor: '#db8a90'
   }
+},
+names: {
+  alignItems: "row"
 }
 })
 
@@ -131,7 +135,7 @@ export default function Register() {
           component="h2"
           gutterBottom
         >
-          Register a New Player
+          Sign up a New Player
         </Typography>
         <br/>
         <Typography>
@@ -150,15 +154,32 @@ export default function Register() {
         >
           Player Bio
         </Typography>
-          <TextField
-          onChange={(e) => setName(e.target.value)}
-          className={classes.field} 
-          label="Name"
-          variant="outlined"
-          fullWidth
-          required
-          error={nameError}
-          />
+          <div 
+            className={classes.names}>
+            <TextField
+              onChange={(e) => setName(e.target.value)}
+              className={classes.field} 
+              label="First Name"
+              variant="outlined"
+              required
+              error={nameError}
+            />
+            <TextField
+              onChange={(e) => setName(e.target.value)}
+              className={classes.field} 
+              label="Middle Name"
+              variant="outlined"
+              error={nameError}
+            />
+            <TextField
+              onChange={(e) => setName(e.target.value)}
+              className={classes.field} 
+              label="Last Name"
+              variant="outlined"
+              required
+              error={nameError}
+            />
+          </div>
           <TextField
             onChange={(e) => setDateOfBirth(e.target.value)}
           className={classes.field} 

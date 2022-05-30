@@ -6,7 +6,7 @@ import Players from './pages/Players'
 import Education from './pages/Education'
 import Counseling from './pages/Counseling'
 import Lifeskills from './pages/Lifeskills'
-import Register from './pages/Register'
+import Signup from './pages/Signup'
 import Sessions from './pages/Sessions'
 import Visits from './pages/Visits'
 import Admin from './pages/Admin'
@@ -28,8 +28,8 @@ function App() {
             <Route exact path="/dashboard">
               <Dashboard />
             </Route>
-            <Route path="/register">
-              <Register />
+            <Route path="/signup">
+              <Signup />
             </Route>
             <Route path="/sessions">
               <Sessions />

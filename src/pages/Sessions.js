@@ -8,11 +8,11 @@ import InputLabel from '@material-ui/core/InputLabel'
 import NativeSelect from '@material-ui/core/NativeSelect'
 import { FormControl } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
-import Box from '@material-ui/core/Box';
-import Tab from '@material-ui/core/Tab';
+import Box from '@material-ui/core/Box'
+import Tab from '@material-ui/core/Tab'
 import TabContext from '@material-ui/lab/TabContext'
-import TabList from '@material-ui/lab/TabList';
-import TabPanel from '@material-ui/lab/TabPanel';
+import TabList from '@material-ui/lab/TabList'
+import TabPanel from '@material-ui/lab/TabPanel'
 import Layout from '../components/Layout'
 
 
@@ -32,7 +32,7 @@ btn: {
   }
 }
 })
-export default function Register() {
+export default function Signup() {
   const classes = useStyles()
   const history = useHistory()
   const [value, setValue] = React.useState('1');

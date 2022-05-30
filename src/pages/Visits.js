@@ -36,6 +36,8 @@ const useStyles = makeStyles({
     "&:hover": {
       backgroundColor: "#db8a90",
     },
+    margin: 15,
+    
   },
 });
 
@@ -98,7 +100,7 @@ export default function BasicTabs() {
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            <Tab label="Initial Visit" {...a11yProps(0)} />
+            <Tab label="Register player" {...a11yProps(0)} />
             <Tab label="Class 8 Visit" {...a11yProps(1)} />
             <Tab label="Case Management" {...a11yProps(2)} />
           </Tabs>
@@ -154,91 +156,7 @@ export default function BasicTabs() {
           autoComplete="off"
           // onSubmit={handleSubmit}
         >
-          <Typography
-            variant="h5"
-            color="textPrimary"
-            component="h2"
-            gutterBottom
-          >
-            Beneficiaries who are SRF members
-          </Typography>
-          <TextField
-            // onChange={(e) => setName(e.target.value)}
-            className={classes.field}
-            label="Name"
-            variant="outlined"
-            fullWidth
-            required
-            // error={nameError}
-          />
-          <TextField
-            // onChange={(e) => setDateOfBirth(e.target.value)}
-            className={classes.field}
-            label="Date of Birth"
-            variant="outlined"
-            fullWidth
-            required
-            // error={dateOfBirthError}
-          />
-          <TextField
-            // onChange={(e) => setDateOfBirth(e.target.value)}
-            className={classes.field}
-            label="School"
-            variant="outlined"
-            fullWidth
-            required
-            // error={dateOfBirthError}
-          />
-          <TextField
-            // onChange={(e) => setDateOfBirth(e.target.value)}
-            className={classes.field}
-            label="Class"
-            variant="outlined"
-            fullWidth
-            required
-            // error={dateOfBirthError}
-          />
-          <TextField
-            // onChange={(e) => setDateOfBirth(e.target.value)}
-            className={classes.field}
-            label="Year of Entry to SRF"
-            variant="outlined"
-            fullWidth
-            required
-            // error={dateOfBirthError}
-          />
-          <FormControl fullWidth className={classes.field}>
-            <FormLabel id="radio-buttons-group-label">
-              Membership Status
-            </FormLabel>
-            <RadioGroup
-              // onChange={(e) => setGender(e.target.value)}
-              aria-labelledby="radio-buttons-group-label"
-              name="radio-buttons-group"
-              // error={genderError}
-            >
-              <FormControlLabel
-                value="active"
-                control={<Radio />}
-                label="Active"
-              />
-              <FormControlLabel
-                value="inactive"
-                control={<Radio />}
-                label="Inactive"
-              />
-            </RadioGroup>
-            <br />
-            <Button
-              className={classes.btn}
-              type="submit"
-              color="secondary"
-              variant="contained"
-              // endIcon={<KeyboardArrowRightIcon />}
-            >
-              Add Beneficiary
-            </Button>
-          </FormControl>
+
           <Divider />
           <br />
           {/* Household Details */}
@@ -722,15 +640,16 @@ export default function BasicTabs() {
             required
             // error={nameError}
           />
-          <TextField
-            // onChange={(e) => setName(e.target.value)}
-            className={classes.field}
-            label="Nature of employment"
-            variant="outlined"
-            fullWidth
-            required
-            // error={nameError}
-          />
+          <div>
+            <label for="exampleFormControlTextarea14">
+              Nature of Employment
+            </label>
+            <br />
+              <FormControlLabel control={<Checkbox />} label="Casual" />
+              <FormControlLabel control={<Checkbox />} label="Salaried" />
+              <FormControlLabel control={<Checkbox />} label="Contracted" />
+              <FormControlLabel control={<Checkbox />} label="Self employed" />
+          </div>
           <TextField
             // onChange={(e) => setName(e.target.value)}
             className={classes.field}
@@ -777,7 +696,7 @@ export default function BasicTabs() {
               <FormControlLabel control={<Checkbox />} label="Bank" />
               <FormControlLabel control={<Checkbox />} label="Chiefs Camp" />
               <FormControlLabel control={<Checkbox />} label="None" />
-            </FormGroup>
+          </FormGroup>
           <br />
           <Divider />
           <br />
@@ -1080,6 +999,93 @@ export default function BasicTabs() {
           <Divider />
           <br />
           <Typography
+            variant="h5"
+            color="textPrimary"
+            component="h2"
+            gutterBottom
+          >
+            Beneficiaries who are SRF members
+          </Typography>
+          <TextField
+            // onChange={(e) => setName(e.target.value)}
+            className={classes.field}
+            label="Name"
+            variant="outlined"
+            fullWidth
+            required
+            // error={nameError}
+          />
+          <TextField
+            // onChange={(e) => setDateOfBirth(e.target.value)}
+            className={classes.field}
+            label="Date of Birth"
+            variant="outlined"
+            fullWidth
+            required
+            // error={dateOfBirthError}
+          />
+          <TextField
+            // onChange={(e) => setDateOfBirth(e.target.value)}
+            className={classes.field}
+            label="School"
+            variant="outlined"
+            fullWidth
+            required
+            // error={dateOfBirthError}
+          />
+          <TextField
+            // onChange={(e) => setDateOfBirth(e.target.value)}
+            className={classes.field}
+            label="Class"
+            variant="outlined"
+            fullWidth
+            required
+            // error={dateOfBirthError}
+          />
+          <TextField
+            // onChange={(e) => setDateOfBirth(e.target.value)}
+            className={classes.field}
+            label="Year of Entry to SRF"
+            variant="outlined"
+            fullWidth
+            required
+            // error={dateOfBirthError}
+          />
+          <FormControl fullWidth className={classes.field}>
+            <FormLabel id="radio-buttons-group-label">
+              Membership Status
+            </FormLabel>
+            <RadioGroup
+              // onChange={(e) => setGender(e.target.value)}
+              aria-labelledby="radio-buttons-group-label"
+              name="radio-buttons-group"
+              // error={genderError}
+            >
+              <FormControlLabel
+                value="active"
+                control={<Radio />}
+                label="Active"
+              />
+              <FormControlLabel
+                value="inactive"
+                control={<Radio />}
+                label="Inactive"
+              />
+            </RadioGroup>
+            <br />
+            <Button
+              className={classes.btn}
+              type="submit"
+              color="secondary"
+              variant="contained"
+              // endIcon={<KeyboardArrowRightIcon />}
+            >
+              Add Beneficiary
+            </Button>
+          </FormControl>
+          <Divider />
+          <br/>
+          <Typography
               variant="h5"
               color="textPrimary"
               component="h2"
@@ -1131,25 +1137,24 @@ export default function BasicTabs() {
               rows={6}
               // error={dateOfBirthError}
             />
-          <br />
-          <TextField
-            // onChange={(e) => setName(e.target.value)}
-            className={classes.field}
-            label="Caregiver's Name"
-            variant="outlined"
-            fullWidth
-            required
-            // error={nameError}
-          />
-          <TextField
-            // onChange={(e) => setName(e.target.value)}
-            className={classes.field}
-            label="Date"
-            variant="outlined"
-            fullWidth
-            required
-            // error={nameError}
-          />
+            <TextField
+              // onChange={(e) => setName(e.target.value)}
+              className={classes.field}
+              label="Caregiver's Name"
+              variant="outlined"
+              fullWidth
+              required
+              // error={nameError}
+            />
+            <TextField
+              // onChange={(e) => setName(e.target.value)}
+              className={classes.field}
+              label="Date"
+              variant="outlined"
+              fullWidth
+              required
+              // error={nameError}
+            />
           </FormControl>
           <Button
             className={classes.btn}
@@ -1159,6 +1164,15 @@ export default function BasicTabs() {
             // endIcon={<KeyboardArrowRightIcon />}
           >
             Caregiver's Signature
+          </Button>
+          <Button
+            className={classes.btn}
+            type="submit"
+            color="secondary"
+            variant="contained"
+            // endIcon={<KeyboardArrowRightIcon />}
+          >
+            Archive
           </Button>
           <br />
           <TextField
@@ -1181,8 +1195,6 @@ export default function BasicTabs() {
               rows={6}
               // error={dateOfBirthError}
             />
-          <br />
-          <br />
           <Divider />
           <br />
           <FormControl fullWidth>
@@ -1214,10 +1226,31 @@ export default function BasicTabs() {
               rows={6}
               // error={dateOfBirthError}
             />
+            <FormControl fullWidth>
+            <TextField
+                // onChange={(e) => setDateOfBirth(e.target.value)}
+                className={classes.field}
+                label="Note any other additional skills of the family earners"
+                variant="outlined"
+                fullWidth
+                multiline
+                rows={4}
+                // error={dateOfBirthError}
+              />
+            </FormControl>
+            <div>
+              <label for="exampleFormControlTextarea14">
+              Scale the family and to give the necessary recommendations: 
+              </label>
+              <br/>
+              <FormControlLabel control={<Checkbox />} label="Least Vulnerable" />
+              <FormControlLabel control={<Checkbox />} label="Vulnerable" />
+              <FormControlLabel control={<Checkbox />} label="Highly Vulnerable" />
+          </div>
             <TextField
               // onChange={(e) => setDateOfBirth(e.target.value)}
               className={classes.field}
-              label="Scale the family and to give the necessary recommendations"
+              label="Give the necessary recommendations"
               variant="outlined"
               fullWidth
               required

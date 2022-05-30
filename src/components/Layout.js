@@ -189,9 +189,9 @@ export default function Layout({children}) {
             path: '/dashboard'
         },
         {
-            text: 'Register',
+            text: 'Signup',
             icon: <HowToRegOutlinedIcon style={{ color: "green" }} />,
-            path: '/register'
+            path: '/signup'
         },
         {
             text: 'Sessions',
