@@ -14,33 +14,33 @@ import Divider from '@material-ui/core/Divider'
 import Layout from '../components/Layout'
 // import Box from '@mui/material/Box'
 
-// const defaultValues ={
-//   ReactDatepicker: new Date(),
-// }
+//STYLES
 const useStyles = makeStyles({
-field: {
-  marginTop: 20,
-  marginBottom: 20,
-  display: 'block'
-},
-Typography: {
-  marginTop: 25,
-},
-btn: {
-  backgroundColor:'#018934',
-  '&:hover': {
-    backgroundColor: '#db8a90'
+  field: {
+    marginTop: 20,
+    marginBottom: 20,
+    display: 'block'
+  },
+  Typography: {
+    marginTop: 25,
+  },
+  btn: {
+    backgroundColor:'#018934',
+    '&:hover': {
+      backgroundColor: '#db8a90'
+    }
+  },
+  names: {
+    alignItems: "row"
   }
-},
-names: {
-  alignItems: "row"
-}
 })
 
 
 export default function Register() {
   const classes = useStyles()
   const history = useHistory()
+  
+  // SET
   const[ name, setName] = useState('')
   const[ dateOfBirth, setDateOfBirth] = useState('')
   const[ gender, setGender] = useState('female')
@@ -49,6 +49,8 @@ export default function Register() {
   const[ relationship, setRelationship] = useState('')
   const[ clinic, setClinic] = useState('')
   const[ team, setTeam] = useState('')
+
+  //ERROR
   const[ nameError, setNameError] = useState('false')
   const[ dateOfBirthError, setDateOfBirthError] = useState('false')
   const[ genderError, setGenderError] = useState('false')

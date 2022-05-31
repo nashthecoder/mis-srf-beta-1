@@ -279,6 +279,7 @@ export default function BasicTabs() {
               name="radio-buttons-group"
               // error={genderError}
             >
+            <div>
               <FormControlLabel
                 value="active"
                 control={<Radio />}
@@ -289,6 +290,7 @@ export default function BasicTabs() {
                 control={<Radio />}
                 label="No"
               />
+            </div>
             </RadioGroup>
             <br />
             <TextField
@@ -444,16 +446,18 @@ export default function BasicTabs() {
                 Check all that apply
               </label>
               <br />
-              <FormControlLabel control={<Checkbox />} label="Bed & Mattress" />
-              <FormControlLabel control={<Checkbox />} label="Beddings" />
-              <FormControlLabel control={<Checkbox />} label="Furniture" />
-              <FormControlLabel control={<Checkbox />} label="Electricity" />
-              <FormControlLabel control={<Checkbox />} label="Solar Lamps" />
-              <FormControlLabel control={<Checkbox />} label="Television" />
-              <FormControlLabel control={<Checkbox />} label="Radio" />
-              <FormControlLabel control={<Checkbox />} label="Stove" />
-              <FormControlLabel control={<Checkbox />} label="Gas Cooker" />
-              <FormControlLabel control={<Checkbox />} label="Fridge" />
+              <div>
+                <FormControlLabel control={<Checkbox />} label="Bed & Mattress" />
+                <FormControlLabel control={<Checkbox />} label="Beddings" />
+                <FormControlLabel control={<Checkbox />} label="Furniture" />
+                <FormControlLabel control={<Checkbox />} label="Electricity" />
+                <FormControlLabel control={<Checkbox />} label="Solar Lamps" />
+                <FormControlLabel control={<Checkbox />} label="Television" />
+                <FormControlLabel control={<Checkbox />} label="Radio" />
+                <FormControlLabel control={<Checkbox />} label="Stove" />
+                <FormControlLabel control={<Checkbox />} label="Gas Cooker" />
+                <FormControlLabel control={<Checkbox />} label="Fridge" />
+              </div>
             </FormGroup>
             <br/>
             <TextField
@@ -689,13 +693,15 @@ export default function BasicTabs() {
                 Check all that apply
               </label>
               <br />
-              <FormControlLabel control={<Checkbox />} label="Family Members" />
-              <FormControlLabel control={<Checkbox />} label="Mosque/Church" />
-              <FormControlLabel control={<Checkbox />} label="Sacco" />
-              <FormControlLabel control={<Checkbox />} label="Chamas" />
-              <FormControlLabel control={<Checkbox />} label="Bank" />
-              <FormControlLabel control={<Checkbox />} label="Chiefs Camp" />
-              <FormControlLabel control={<Checkbox />} label="None" />
+              <div>
+                <FormControlLabel control={<Checkbox />} label="Family Members" />
+                <FormControlLabel control={<Checkbox />} label="Mosque/Church" />
+                <FormControlLabel control={<Checkbox />} label="Sacco" />
+                <FormControlLabel control={<Checkbox />} label="Chamas" />
+                <FormControlLabel control={<Checkbox />} label="Bank" />
+                <FormControlLabel control={<Checkbox />} label="Chiefs Camp" />
+                <FormControlLabel control={<Checkbox />} label="None" />
+              </div>
           </FormGroup>
           <br />
           <Divider />
@@ -869,10 +875,10 @@ export default function BasicTabs() {
               As a concerned parent which actions do you take concerning the above behavior/reactions/traits?
               </label>
               <br />
-              <FormControlLabel control={<Checkbox />} label="I keep silent and assume nothing happens" />
-              <FormControlLabel control={<Checkbox />} label=" I react and fight back most of the time (quarrel)" />
-              <FormControlLabel control={<Checkbox />} label="I report him/her to the police" />
-              <FormControlLabel control={<Checkbox />} label=" I report him/her to the church/ village leaders" />
+                <FormControlLabel control={<Checkbox />} label="I keep silent and assume nothing happens" />
+                <FormControlLabel control={<Checkbox />} label=" I react and fight back most of the time (quarrel)" />
+                <FormControlLabel control={<Checkbox />} label="I report him/her to the police" />
+                <FormControlLabel control={<Checkbox />} label=" I report him/her to the church/ village leaders" />
             </FormGroup>
             <TextField
               // onChange={(e) => setDateOfBirth(e.target.value)}
@@ -912,11 +918,13 @@ export default function BasicTabs() {
                 Check all that apply
               </label>
               <br />
-              <FormControlLabel control={<Checkbox />} label="Physical" />
-              <FormControlLabel control={<Checkbox />} label="Sexual" />
-              <FormControlLabel control={<Checkbox />} label="Emotional" />
-              <FormControlLabel control={<Checkbox />} label="Negiligence" />
-              <FormControlLabel control={<Checkbox />} label="Others" />
+              <div>
+                <FormControlLabel control={<Checkbox />} label="Physical" />
+                <FormControlLabel control={<Checkbox />} label="Sexual" />
+                <FormControlLabel control={<Checkbox />} label="Emotional" />
+                <FormControlLabel control={<Checkbox />} label="Negiligence" />
+                <FormControlLabel control={<Checkbox />} label="Others" />
+              </div>
             </FormGroup>
             <TextField
               // onChange={(e) => setDateOfBirth(e.target.value)}
@@ -1061,16 +1069,18 @@ export default function BasicTabs() {
               name="radio-buttons-group"
               // error={genderError}
             >
-              <FormControlLabel
-                value="active"
-                control={<Radio />}
-                label="Active"
-              />
-              <FormControlLabel
-                value="inactive"
-                control={<Radio />}
-                label="Inactive"
-              />
+              <div>
+                <FormControlLabel
+                  value="active"
+                  control={<Radio />}
+                  label="Active"
+                />
+                <FormControlLabel
+                  value="inactive"
+                  control={<Radio />}
+                  label="Inactive"
+                />
+              </div>
             </RadioGroup>
             <br />
             <Button

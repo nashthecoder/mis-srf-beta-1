@@ -1,26 +1,28 @@
-import React from "react";
-import { Stack } from "@mui/material";
-// import { styled } from "@mui/material/styles";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import Layout from "../components/Layout";
-import Container from "@material-ui/core/Container";
-import { format } from "date-fns";
-import { makeStyles, TextField } from "@material-ui/core/";
-import Card from "@material-ui/core/Card";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import InputLabel from "@material-ui/core/InputLabel";
-import NativeSelect from "@material-ui/core/NativeSelect";
-import { FormControl } from "@material-ui/core";
-import Box from "@material-ui/core/Box";
+import React, { useEffect, useState } from "react"
+import { Stack } from "@mui/material"
+// import { styled } from "@mui/material/styles"
+import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
+import Layout from "../components/Layout"
+import Container from "@material-ui/core/Container"
+import { format } from "date-fns"
+import { makeStyles, TextField } from "@material-ui/core/"
+import Card from "@material-ui/core/Card"
+import CardMedia from "@material-ui/core/CardMedia"
+import CardContent from "@material-ui/core/CardContent"
+import InputLabel from "@material-ui/core/InputLabel"
+import NativeSelect from "@material-ui/core/NativeSelect"
+import { FormControl } from "@material-ui/core"
+import Box from "@material-ui/core/Box"
+import { useHistory } from 'react-router-dom'
+import Grid from "@mui/material/Grid"
+import Checkbox from "@mui/material/Checkbox"
+import FormControlLabel from "@mui/material/FormControlLabel"
+// import Paper from "@mui/material/Paper"
 // import TabContext from "@material-ui/lab/TabContext"
 // import TabPanel from "@material-ui/lab/TabPanel"
-import Grid from "@mui/material/Grid";
-// import Paper from "@mui/material/Paper";
-import Checkbox from "@mui/material/Checkbox";
-import FormControlLabel from "@mui/material/FormControlLabel";
 
+//STYLES
 const useStyles = makeStyles({
     field: {
         marginTop: 20,
@@ -61,41 +63,102 @@ const useStyles = makeStyles({
     // }));
 
     export default function Counseling() {
-    const classes = useStyles();
-    // const history = useHistory()
-    // const [value] = React.useState("1");
-    // const[ date, setDate] = useState('')
-    // const[ clinic, setClinic] = useState('')
-    // const[ team, setTeam] = useState('')
-    // const[ dateError, setDateError] = useState('false')
-    // const[ clinicError, setClinicError] = useState('false')
-    // const[ teamError, setTeamError] = useState('false')
+        const [counseling, setCounseling] = useState([]);
+        const classes = useStyles();
+        const history = useHistory()
+        const [value] = React.useState("1");
 
-    // const handleChange = (event, newValue) => {
-    //     setValue(newValue);
-    // };
+        // SET
+        const[ dateNew, setDateNew] = useState('')
+        const[ clientType, setClientType] = useState('')
+        const[ sessionCategory, setSessionCategory] = useState('')
+        const[ sessionType, setSessionType] = useState('')
+        const[ issuesAddressed, setIssuesAddressed] = useState('')
+        const[ attitudeBehaviour, setAttitudeBehaviour] = useState('')
+        const[ challenges, setChallenges] = useState('')
+        const[ nextSteps, setNextSteps] = useState('')
+        const[ additionalComments, setAdditionalComments] = useState('')
+        const[ caseStatus, setCaseStatus] = useState('')
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     setDateError(false)
-    //     setClinicError(false)
-    //     setTeamError(false)
+        //ERROR
+        const[ dateNewError, setDateNewError] = useState('false')
+        const[ clientTypeError, setClientTypeError] = useState('false')
+        const[ sessionCategoryError, setSessionCategoryError] = useState('false')
+        const[ sessionTypeError, setSessionTypeError] = useState('false')
+        const[ issuesAddressedError, setIssuesAddressedError] = useState('false')
+        const[ attitudeBehaviourError, setAttitudeBehaviourError] = useState('false')
+        const[ challengesError, setChallengesError] = useState('false')
+        const[ nextStepsError, setNextStepsError] = useState('false')
+        const[ additionalCommentsError, setAdditionalCommentsError] = useState('false')
+        const[ caseStatusError, setCaseStatusError] = useState('false')
 
-    //     if ( date === '') {
-    //         setDateError(true)
-    //     }
-    //     if ( clinic === '') {
-    //         setClinicError(true)
-    //     }
-    //     if ( team === '') {
-    //         setTeamError(true)
-    //     }
-    //         console.log (
-    //             date,
-    //             clinic,
-    //             team
-    //             )
-    // }
+        // const handleChange = (event, newValue) => {
+        //     setValue(newValue);
+        // };
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setDateNewError(false)
+        setClientTypeError(false)
+        setSessionCategoryError (false)
+        setSessionTypeError(false)
+        setIssuesAddressedError(false)
+        setAttitudeBehaviourError(false)
+        setChallengesError(false)
+        setNextStepsError(false)
+        setAdditionalCommentsError(false)
+        setCaseStatusError(false)
+
+        if ( dateNew === '') {
+            setDateNewError(true)
+        }
+        if ( clientType === '') {
+            setClientTypeError(true)
+        }
+        if ( sessionCategory === '') {
+            setSessionCategoryError(true)
+        }
+        if ( sessionType === '') {
+            setSessionTypeError(true)
+        }
+        if ( issuesAddressed === '') {
+            setIssuesAddressedError(true)
+        }
+        if ( attitudeBehaviour === '') {
+            setAttitudeBehaviourError(true)
+        }
+        if ( challenges === '') {
+            setChallengesError(true)
+        }
+        if ( nextSteps === '') {
+            setNextStepsError(true)
+        }
+        if ( additionalComments === '') {
+            setAdditionalCommentsError(true)
+        }
+        if ( caseStatus === '') {
+            setCaseStatusError(true)
+        }
+            console.log (
+                dateNew,
+                clientType,
+                sessionCategory,
+                sessionType,
+                issuesAddressed,
+                attitudeBehaviour,
+                challenges,
+                nextSteps,
+                additionalComments,
+                caseStatus
+                )
+    }
+
+    useEffect(() => {
+        fetch('http://localhost:8000/counseling')
+            .then(res => res.json())
+            .then(data => setCounseling(data))
+    }, [])
+
     return (
         <Layout>
         <Container size="sm">
@@ -111,7 +174,7 @@ const useStyles = makeStyles({
             <form
                 noValidate
                 autoComplete="off"
-                // onSubmit={handleSubmit}
+                onSubmit={handleSubmit}
             >
                 <Typography>{format(new Date(), "do MMMM Y")}</Typography>
                 <br />
@@ -179,11 +242,11 @@ const useStyles = makeStyles({
                     Client Type
                 </InputLabel>
                 <NativeSelect
-                    label="Clinic"
-                    // onChange={(e) => setClinic(e.target.value)}
-                    // error={clinicError}
+                    label="Client Type"
+                    onChange={(e) => setClientType(e.target.value)}
+                    error={clientTypeError}
                     inputProps={{
-                    name: "clinic",
+                    name: "clientType",
                     id: "uncontrolled-native",
                     }}
                 >
